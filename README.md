@@ -8,6 +8,7 @@ installing a module which have any Grid that depends on joolist-zf2-grid.
 
 ## Requirements
 * Zend Framework 2
+* Bootstrap theme
 
 ## Installation
 
@@ -61,7 +62,7 @@ in Module.php of your module load Service Config like this:
 
 #### 3. Create a Model extends BaseModel like this:
 
-    `
+    
 	<?php
 		namespace Application\Model;
 		
@@ -70,11 +71,11 @@ in Module.php of your module load Service Config like this:
 		class Album extends BaseModel {
 	
 	}
-    `
+    
 
 #### 4. Create Model Table extends BaseTable like this: 
 
-    `
+    
 	<?php
 	namespace Application\Model\Table;
 	
@@ -101,7 +102,7 @@ in Module.php of your module load Service Config like this:
 	       return $select;
 	    }
 	}
-    `
+    
 
 
 #### 5. Create a Grid like this:
