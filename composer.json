@@ -2,7 +2,7 @@
     "name": "joolist-zf2-grid",
     "description": "Joolist grid module for ZF2",
     "keywords": ["Grid","JOO","Joolist","Terra"],
-    "homepage": "http://joolist.com",
+    "homepage": "https://github.com/Joolist/joolist-zf2-grid/",
     "type": "library",
     "license": "LGPL",
     "authors": [
