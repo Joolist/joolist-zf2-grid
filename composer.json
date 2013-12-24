@@ -1,0 +1,28 @@
+{
+    "name": "JoolistGrid",
+    "description": "Joolist grid module for ZF2",
+    "keywords": ["Grid","JOO","Joolist","Terra"],
+    "homepage": "http://joolist.com",
+    "type": "library",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Nguyen Tien Minh",
+            "homepage": "http://joolist.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0",
+        "ext-xml": "*"
+    },
+    "recommend": {
+        "ext-zip": "*",
+        "ext-gd2": "*"
+    },
+    "autoload": {
+        "psr-0": {"JoolistGrid": "src"},
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
