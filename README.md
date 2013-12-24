@@ -37,12 +37,13 @@ Simply clone this project into your `./vendor/` directory and enable it in your
 
 ## Instruction
 
-1. Set up Global Adapter for Zend Framework 2
+#### 1. Set up Global Adapter for Zend Framework 2
 follow: http://framework.zend.com/manual/2.1/en/tutorials/tutorial.dbadapter.html
 
-2. Load ServiceConfig
+#### 2. Load ServiceConfig
 in Module.php of your module load Service Config like this:
 
+    ```bash
      public function getServiceConfig() {
          return array(
              'factories' => array(
@@ -59,20 +60,25 @@ in Module.php of your module load Service Config like this:
              ),
          );
      }
-     
+     ```
 
-3. Create a Model extends BaseModel like this:
-<?php
-	namespace Application\Model;
+#### 3. Create a Model extends BaseModel like this:
+
+    ```bash
+	<?php
+		namespace Application\Model;
+		
+		use JoolistGrid\Model\BaseModel;
+		
+		class Album extends BaseModel {
 	
-	use JoolistGrid\Model\BaseModel;
-	
-	class Album extends BaseModel {
+	}
+     ```
 
-}
+#### 4. Create Model Table extends BaseTable like this: 
 
-4. Create Model Table extends BaseTable like this: 
-<?php
+    ```bash
+	<?php
 	namespace Application\Model\Table;
 	
 	use Zend\Db\TableGateway\TableGateway;
@@ -98,10 +104,13 @@ in Module.php of your module load Service Config like this:
 	       return $select;
 	    }
 	}
+     ```
 
 
-5. Create a Grid like this:
-<?php
+#### 5. Create a Grid like this:
+
+    ```bash
+	<?php
 	namespace Application\Grid;
 	
 	use JoolistGrid\JoolistGrid;
@@ -153,10 +162,12 @@ in Module.php of your module load Service Config like this:
 	        $this->setCollectionColumn($collectionColumn);
 	    }
 	}
+     ```
 	
-6. In Your controller 
+#### 6. In Your controller 
  Load model table, grid like this: 
  
+    ```bash
     public function indexAction() {
         $sm = $this->getServiceLocator();
         $albumTable = $sm->get('Application\Model\Table\AlbumTable');
@@ -173,8 +184,10 @@ in Module.php of your module load Service Config like this:
 
         return new ViewModel( array('grid' => $grid));
     }
+     ```
     
-7. In your view
+#### 7. In your view
  Render the grid:
-<?php echo $grid->getView()->getHtml(); ?>
-
+    ```bash
+	<?php echo $grid->getView()->getHtml(); ?>
+     ```
