@@ -1,6 +1,3 @@
-joolist-zf2-grid
-================
-
 # joolist-zf2-grid
 Version 0.0.1 Created by Nguyen Tien Minh and the Joolist team
 
@@ -43,7 +40,7 @@ follow: http://framework.zend.com/manual/2.1/en/tutorials/tutorial.dbadapter.htm
 #### 2. Load ServiceConfig
 in Module.php of your module load Service Config like this:
 
-    `
+    
      public function getServiceConfig() {
          return array(
              'factories' => array(
@@ -60,7 +57,7 @@ in Module.php of your module load Service Config like this:
              ),
          );
      }
-    `
+    
 
 #### 3. Create a Model extends BaseModel like this:
 
@@ -109,7 +106,7 @@ in Module.php of your module load Service Config like this:
 
 #### 5. Create a Grid like this:
 
-    `
+    
 	<?php
 	namespace Application\Grid;
 	
@@ -162,12 +159,12 @@ in Module.php of your module load Service Config like this:
 	        $this->setCollectionColumn($collectionColumn);
 	    }
 	}
-    `
+    
 	
 #### 6. In Your controller 
  Load model table, grid like this: 
  
-    `
+    
     public function indexAction() {
         $sm = $this->getServiceLocator();
         $albumTable = $sm->get('Application\Model\Table\AlbumTable');
@@ -184,7 +181,6 @@ in Module.php of your module load Service Config like this:
 
         return new ViewModel( array('grid' => $grid));
     }
-    `
     
 #### 7. In your view
  Render the grid:
